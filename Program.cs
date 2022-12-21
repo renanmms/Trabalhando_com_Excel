@@ -9,7 +9,9 @@ var filePath = FileSystem.GetFileInfo("Simulacao_tabelas_do_banco.xlsx");
 var existingFile = new FileInfo(filePath.ToString());
 
 using(var package = new ExcelPackage(existingFile)){
-        
+    var worksheet = package.Workbook.Worksheets[0];
+
+    Console.WriteLine($"{worksheet.Cells["A1"].Value}");
 }
 
 
